@@ -1,5 +1,10 @@
 package main
 
+import (
+	"fmt"
+	"github.com/inspectorvitya/wb-lvl2/develop/dev02/unpack"
+)
+
 /*
 === Задача на распаковку ===
 
@@ -19,5 +24,6 @@ package main
 */
 
 func main() {
-
+	str, err := unpack.Unpack(`qwe\4\5`)
+	fmt.Println(str, err)
 }

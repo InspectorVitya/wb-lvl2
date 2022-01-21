@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"github.com/inspectorvitya/wb-lvl2/develop/dev01/ntp"
+	"os"
+)
+
 /*
 === Базовая задача ===
 
@@ -13,5 +19,11 @@ package main
 */
 
 func main() {
+	t, err := ntp.GetTime("0.ru.pool.ntp.org")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 
+	fmt.Println(t)
 }
